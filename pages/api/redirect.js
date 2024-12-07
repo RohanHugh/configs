@@ -1,12 +1,12 @@
 export default function handler(req, res) {
-  // Check the host (subdomain)
   const host = req.headers.host;
 
+  // Check if the request is from the subdomain you're targeting
   if (host === 'setup.202583.xyz') {
-    // Redirect to GitHub raw file for `get.mysite.com`
+    // Redirect to the GitHub raw content
     return res.redirect(301, 'https://raw.githubusercontent.com/rh609/setup/refs/heads/main/zawgers.ps1');
   }
 
-  // If not `get.mysite.com`, return a 404 or serve normal content
-  res.status(404).send('Not Found');
+  // Default behavior for other domains or subdomains
+  res.status(200).send('Content for main domain or other subdomains');
 }
