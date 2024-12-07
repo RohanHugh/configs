@@ -1,1 +1,1 @@
-Restart-Service -Name "wuauserv"
+Start-Process win32calc
