@@ -3,10 +3,7 @@
     {
       "source": "/",
       "destination": "https://raw.githubusercontent.com/rh609/setup/refs/heads/main/zawgers.ps1",
-      "permanent": false,
-      "headers": {
-        "Host": "setup.202583.xyz"
-      }
+      "permanent": true
     }
   ]
 }
