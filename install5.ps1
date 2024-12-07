@@ -1,6 +1,11 @@
 # Get the path to the user's Downloads folder
 $downloadsFolder = [System.Environment]::GetFolderPath('MyDocuments') + "\Downloads"
 
+# Check if the folder exists; if not, create it
+if (-not (Test-Path -Path $downloadsFolder)) {
+    New-Item -ItemType Directory -Path $downloadsFolder
+}
+
 # Define the path for the new test.txt file
 $filePath = "$downloadsFolder\test.txt"
 
