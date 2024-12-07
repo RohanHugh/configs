@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "https://raw.githubusercontent.com/username/repo/branch/script.ps1",
-      "permanent": true
-    }
-  ]
-}
