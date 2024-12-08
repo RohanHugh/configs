@@ -7,7 +7,10 @@ Windows - powershell
 curl is universal across linux, macos and windows meaning it makes for an easier time remembering
 an example would be:
 
+
 curl setup.mywebsite.com | bash
+
 curl setup.mywebsite.com | powershell
+
 
 I would have to write one powershell script and then one bash script, inside the bash script I can detect whether they are using linux or macos.
