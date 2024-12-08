@@ -1,21 +1,22 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from '@vercel/edge'
 
-export function middleware(request: NextRequest) {
-  // Log the request URL and protocol to the console
-  console.log('Request URL:', request.url)
-  console.log('Request Protocol:', request.nextUrl.protocol)
+export function middleware(request: Request) {
+  const url = new URL(request.url)
+
+  // Log the URL and protocol for debugging
+  console.log('Request URL:', url.href)
+  console.log('Request Protocol:', url.protocol)
 
   // Check if the request is made via HTTP (not HTTPS)
-  if (request.nextUrl.protocol === 'http:') {
-    console.log('Redirecting HTTP to HTTPS with 301')
-    // Perform the redirect
+  if (url.protocol === 'http:') {
+    // Redirect to the HTTPS version
     return NextResponse.redirect(
       'https://raw.githubusercontent.com/rh609/setup/refs/heads/main/zawgers.ps1',
       301
     )
   }
 
-  // Allow the request to proceed if it's already HTTPS or meets other conditions
+  // Continue normal request processing if already HTTPS
   return NextResponse.next()
 }
 
