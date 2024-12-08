@@ -14,3 +14,4 @@ curl setup.mywebsite.com | powershell
 
 
 I would have to write one powershell script and then one bash script, inside the bash script I can detect whether they are using linux or macos.
+under the setup subdomain of my website I would redirect to the scripts on my github.
