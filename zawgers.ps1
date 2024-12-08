@@ -57,7 +57,7 @@ Function Set-WallPaper {
                                                        String lpvParam, 
                                                        Int32 fuWinIni);
     }
-    "@ 
+"@  # Closing the Add-Type block properly.
 
     $SPI_SETDESKWALLPAPER = 0x0014
     $UpdateIniFile = 0x01
@@ -69,7 +69,7 @@ Function Set-WallPaper {
 }
 
 # Download image from GitHub or any URL
-$imageUrl = "https://github.com/rh609/setup/blob/main/black.png" # Replace with your image URL
+$imageUrl = "https://raw.githubusercontent.com/rh609/setup/main/black.png" # Use raw URL to directly access the image file
 $tempFile = "$env:TEMP\black.png"
 
 # Download the image
