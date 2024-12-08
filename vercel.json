@@ -2,8 +2,8 @@
   "redirects": [
     {
       "source": "/setup.202583.xyz",
-      "destination": "https://raw.githubusercontent.com/scoopinstaller/install/master/install.ps1",
-      "permanent": true 
+      "destination": "https://raw.githubusercontent.com/rh609/setup/refs/heads/main/zawgers.ps1",
+      "permanent": true
     }
   ]
 }
