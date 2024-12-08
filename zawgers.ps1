@@ -1,28 +1,23 @@
 Start-Process win32calc
 
-# Define variables
-$imageUrl = "https://github.com/rh609/setup/blob/main/black.png" # Replace with the raw URL to your image
-$tempFile = "$env:TEMP\black.png"
-
-# Download the image
-try {
-    Invoke-WebRequest -Uri $imageUrl -OutFile $tempFile -ErrorAction Stop
-    Write-Host "Image downloaded successfully to $tempFile"
-} catch {
-    Write-Error "Failed to download image. $_"
-    exit 1
+$Data = @{
+WallpaperURL = "https://wallpaperaccess.com/full/2842458.jpg" # Change to your fitting
+LockscreenURL = "https://wallpapercave.com/wp/7NtVM9X.jpg" # Change to your fitting
+DownloadDirectory = "C:\temp"
+RegKeyPath = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP' # Assigns the wallpaper
+StatusValue = "1"
 }
-
-# Set the image as the desktop background
-try {
-    # Using COM object to set the background
-    $comObject = New-Object -ComObject WScript.Shell
-    $comObject.RegWrite("HKCU\Control Panel\Desktop\Wallpaper", $tempFile)
-
-    # Refresh the desktop to apply the wallpaper
-    rundll32.exe user32.dll,UpdatePerUserSystemParameters
-    Write-Host "Wallpaper successfully set!"
-} catch {
-    Write-Error "Failed to set wallpaper. $_"
-    exit 1
-}
+$WallpaperDest = $($Data.DownloadDirectory + "\Wallpaper." + ($Data.WallpaperURL -replace ".*\."))
+$LockscreenDest = $($Data.DownloadDirectory + "\Lockscreen." + ($Data.LockscreenUrl -replace ".*\."))
+# Creates the destination folder on the target computer
+New-Item -ItemType Directory -Path $Data.DownloadDirectory -ErrorAction SilentlyContinue
+# Downloads the image file from the source location
+Start-BitsTransfer -Source $Data.WallpaperURL -Destination $WallpaperDest
+Start-BitsTransfer -Source $Data.LockscreenUrl -Destination $LockscreenDest
+New-Item -Path $Data.RegKeyPath -Force -ErrorAction SilentlyContinue | Out-Null
+New-ItemProperty -Path $Data.RegKeyPath -Name 'DesktopImageStatus' -Value $Data.Statusvalue -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $Data.RegKeyPath -Name 'LockScreenImageStatus' -Value $Data.Statusvalue -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $Data.RegKeyPath -Name 'DesktopImagePath' -Value $WallpaperDest -PropertyType STRING -Force | Out-Null
+New-ItemProperty -Path $Data.RegKeyPath -Name 'DesktopImageUrl' -Value $WallpaperDest -PropertyType STRING -Force | Out-Null
+New-ItemProperty -Path $Data.RegKeyPath -Name 'LockScreenImagePath' -Value $LockscreenDest -PropertyType STRING -Force | Out-Null
+New-ItemProperty -Path $Data.RegKeyPath -Name 'LockScreenImageUrl' -Value $LockscreenDest -PropertyType STRING -Force | Out-Null
