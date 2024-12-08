@@ -1,24 +1,14 @@
-// api/redirect.js
-
 export default function handler(req, res) {
-  // Log the request headers for debugging
-  console.log('Request Headers:', req.headers);
+  const hostname = req.headers.host;
 
-  // Detect the protocol using the 'x-forwarded-proto' header
-  const protocol = req.headers['x-forwarded-proto'] || 'http';
-  
-  // Log the detected protocol for debugging
-  console.log('Detected Protocol:', protocol);
+  // Check if the subdomain is "setup.202583.xyz"
+  if (hostname === 'setup.202583.xyz') {
+    const redirectUrl = 'https://raw.githubusercontent.com/rh609/setup/refs/heads/main/zawgers.ps1';
 
-  // If the protocol is HTTP, redirect with a 301 status code
-  if (protocol === 'http') {
-    console.log('Redirecting HTTP request to HTTPS with a 301 status code');
-    res.redirect(301, 'https://raw.githubusercontent.com/rh609/setup/refs/heads/main/zawgers.ps1');
-  } else {
-    // Log the incoming request URL for debugging
-    console.log('Request is already HTTPS, processing normally');
-
-    // Respond with a simple message (or perform another action if needed)
-    res.status(200).send('Request processed successfully');
+    // Return a 301 redirect response
+    return res.redirect(301, redirectUrl);
   }
+
+  // If subdomain doesn't match, respond normally (you can customize this)
+  res.status(404).send('Not Found');
 }
