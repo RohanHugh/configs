@@ -1,9 +1,9 @@
 {
   "redirects": [
     {
-      "source": "/get.scoop.sh",  // The URL path to redirect from
-      "destination": "https://raw.githubusercontent.com/scoopinstaller/install/master/install.ps1",  // The URL to redirect to
-      "permanent": true  // Indicates a 301 permanent redirect
+      "source": "/setup.202583.xyz",
+      "destination": "https://raw.githubusercontent.com/scoopinstaller/install/master/install.ps1",
+      "permanent": true 
     }
   ]
 }
