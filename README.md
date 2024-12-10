@@ -19,4 +19,5 @@ under the setup subdomain of my website I would redirect to the scripts on my gi
 Potential automations:
 
 https://pastebin.com/Zh7WSbJ2
+
 https://pastebin.com/hN8nnwns
