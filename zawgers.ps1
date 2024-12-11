@@ -1,5 +1,5 @@
 # Define variables
-$firefoxPortableUrl = "https://portableapps.com/apps/internet/firefox_portable"
+$firefoxPortableUrl = "https://portableapps.com/redirect/?a=FirefoxPortable&s=fc&d=1"
 $destinationPath = "$HOME\Downloads\FirefoxPortable.zip"
 $installPath = "$HOME\Programs\FirefoxPortable"
 
