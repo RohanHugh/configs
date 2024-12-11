@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "https://raw.githubusercontent.com/rh609/setup/refs/heads/main/zawg.sh",
+      "destination": "https://raw.githubusercontent.com/rh609/setup/refs/heads/main/zawgers.ps1",
       "statusCode": 301,
       "has": [
         {
