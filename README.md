@@ -16,6 +16,22 @@ curl setup.mywebsite.com | powershell
 I would have to write one powershell script and then one bash script, inside the bash script I can detect whether they are using linux or macos.
 under the setup subdomain of my website I would redirect to the scripts on my github.
 
+Apps list:
+
+Firefox
+KeePassXC
+Thunderbird Mozilla
+Wake on LAN
+Microsoft Word / PowerPoint / Excel
+Photoshop | Premiere, After Effects (Optional)
+Voidtools
+NVUpdater
+NVClean Install
+MPV (ffmpeg)
+yt-dlp
+
+irm https://get.activated.win | iex
+
 Potential automations:
 
 https://pastebin.com/Zh7WSbJ2
