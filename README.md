@@ -50,6 +50,8 @@ irm https://get.activated.win | iex
 
 Disable mouse acceleration
 
+Listary
+
 Potential automations:
 
 https://pastebin.com/Zh7WSbJ2
