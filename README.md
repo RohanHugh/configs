@@ -36,8 +36,6 @@ Voidtools
 
 NVUpdater
 
-NVClean Install
-
 MPV (ffmpeg)
 
 yt-dlp
@@ -57,3 +55,10 @@ Potential automations:
 https://pastebin.com/Zh7WSbJ2
 
 https://pastebin.com/hN8nnwns
+
+Steps for Windows 10 IoT Enterprice LTCS Install (Personal):
+ 
+1. AC88 WiFi Driver
+2. FireFox Portable & uBlock Origin
+3. NVClean Install (Once)
+4. 
