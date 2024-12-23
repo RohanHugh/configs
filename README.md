@@ -19,16 +19,30 @@ under the setup subdomain of my website I would redirect to the scripts on my gi
 Apps list:
 
 Firefox
+
 KeePassXC
+
 Thunderbird Mozilla
+
 Wake on LAN
+
 Microsoft Word / PowerPoint / Excel
+
 Photoshop | Premiere, After Effects (Optional)
+
 Voidtools
+
 NVUpdater
+
 NVClean Install
+
 MPV (ffmpeg)
+
 yt-dlp
+
+qBitTorrent
+
+https://github.com/83y/play_mixed_audio
 
 irm https://get.activated.win | iex
 
