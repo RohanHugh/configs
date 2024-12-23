@@ -18,6 +18,8 @@ under the setup subdomain of my website I would redirect to the scripts on my gi
 
 Apps list:
 
+Windows
+
 Firefox
 
 KeePassXC
@@ -45,6 +47,8 @@ qBitTorrent
 https://github.com/83y/play_mixed_audio
 
 irm https://get.activated.win | iex
+
+Disable mouse acceleration
 
 Potential automations:
 
