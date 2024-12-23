@@ -61,4 +61,5 @@ Steps for Windows 10 IoT Enterprice LTCS Install (Personal):
 1. AC88 WiFi Driver
 2. FireFox Portable & uBlock Origin
 3. NVClean Install (Once)
-4. 
+4. Disable Task View Button
+5. Pin File Manager and Firefox to Task Bar
