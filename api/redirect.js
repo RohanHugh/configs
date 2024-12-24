@@ -16,7 +16,7 @@ export async function handler(req) {
     }
     else {
       // Default redirect if OS is not detected
-      redirectUrl = 'https://raw.githubusercontent.com/rh609/setup/refs/heads/main/install.ps1'; // Other OSs (WIP ig?)
+      redirectUrl = 'https://raw.githubusercontent.com/rh609/setup/refs/heads/main/install.ps1'; // Other OSs (WIP)
     }
 
     // Return the 301 redirect response
@@ -28,5 +28,5 @@ export async function handler(req) {
 }
 
 export const config = {
-  matcher: '/',  // Apply middleware to the root path
+  matcher: '/check-user-agent',  // Apply middleware to this custom route
 };
