@@ -1,3 +1,5 @@
+# Abandoned (Switched to NixOS) 
+
 Goal is to have a universal enviroment that I can easily pull from any OS with a easy to remember terminal command.
 
 MacOS - zsh (but can pipe bash)
